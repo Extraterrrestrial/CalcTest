@@ -8,7 +8,7 @@ class CalcTest {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Введите, что нужно посчитать в виде 5 + 5 или V + V\nВводить нужно числа от 1 до 10\nДля завершения работы калбкулятора введите x:");
-        try { //Обрабатываем исключения для введенной строки
+        try { //Обрабатываем исключения
 
             while (true) {
                 System.out.print(">");
