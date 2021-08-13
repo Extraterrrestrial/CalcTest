@@ -117,6 +117,6 @@ public class Convert {
         else if (value == 98) return "XCVIII";
         else if (value == 99) return "XCIX";
         else if (value == 100) return "C";
-        else throw new CalcException("Ответ вне диапазона римских чисел I - C");
+        else throw new CalcException("Ответ вне диапазона римских чисел I...C");
     }
 }
