@@ -18,9 +18,7 @@ public class Calculate {
                 result = number1 / number2;
                 break;
             default:
-//                System.out.println("Не верный знак операции!");
                 throw new CalcException("Не верный знак операции");
-//                throw new IllegalArgumentException("Не верный знак операции");
         }
         return result;
     }
