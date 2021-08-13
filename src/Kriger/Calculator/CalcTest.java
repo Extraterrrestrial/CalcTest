@@ -15,14 +15,13 @@ class CalcTest {
         String str1 = input_line[0];
         String operand = input_line[1];
         String str2 = input_line[2];
-        Arabic check_arabic = new Arabic();
         Calculate calculate = new Calculate();
-        Rome check_rome = new Rome();
+        Checks check = new Checks();
         Convert convert = new Convert();
 
-        if (check_arabic.existArabic(str1) && check_arabic.existArabic(str2) && operand.length() == 1) {
+        if (check.exist_arabic(str1) && check.exist_arabic(str2) && operand.length() == 1) {
             System.out.println(calculate.calculate(Integer.valueOf(str1), Integer.valueOf(str2), operand.charAt(0)));
-        } else if (check_rome.rome(str1) && check_rome.rome(str2) && operand.length() == 1){
+        } else if (check.exist_rome(str1) && check.exist_rome(str2) && operand.length() == 1){
             System.out.println(convert.arabic_to_rome(calculate.calculate(convert.rome_to_arabic(str1), convert.rome_to_arabic(str2), operand.charAt(0))));
         } else {
             System.out.println("Ошибка!");
