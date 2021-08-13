@@ -2,7 +2,7 @@ package Kriger.Calculator;
 
 public class Convert {
 
-    public static int rome_to_arabic(String value){
+    public static int rome_to_arabic(String value) throws CalcException {
         if (value.equals("I"))return 1;
         else if (value.equals("II")) return 2;
         else if (value.equals("III")) return 3;
@@ -13,10 +13,10 @@ public class Convert {
         else if (value.equals("VIII")) return 8;
         else if (value.equals("IX")) return 9;
         else if (value.equals("X")) return 10;
-        else return 0;
+        else throw new CalcException("Римские цифры вне диапазона I - X");
     }
 
-   public static String arabic_to_rome(int value){
+   public static String arabic_to_rome(int value) throws CalcException {
         if (value == 1) return "I";
         else if (value == 2) return "II";
         else if (value == 3) return "III";
@@ -117,6 +117,6 @@ public class Convert {
         else if (value == 98) return "XCVIII";
         else if (value == 99) return "XCIX";
         else if (value == 100) return "C";
-        else return "Ошибка!";
+        else throw new CalcException("Ответ вне диапазона римских чисел I - C");
     }
 }

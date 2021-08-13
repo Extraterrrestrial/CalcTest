@@ -2,7 +2,7 @@ package Kriger.Calculator;
 
 public class Calculate {
 
-     public static int calculate(int number1, int number2, char operation) {
+     public static int calculate(int number1, int number2, char operation) throws CalcException {
         int result = 0;
         switch (operation) {
             case '+':
@@ -18,10 +18,10 @@ public class Calculate {
                 result = number1 / number2;
                 break;
             default:
-                System.out.println("Не верный знак операции!");
+//                System.out.println("Не верный знак операции!");
+                throw new CalcException("Не верный знак операции");
 //                throw new IllegalArgumentException("Не верный знак операции");
         }
         return result;
     }
-
 }
