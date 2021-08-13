@@ -35,8 +35,11 @@ class CalcTest {
             }
         } catch (CalcException e) { //Исключения собственные
             System.out.println("\n" + e.getMessage());
+            System.exit(1);
         } catch (Exception e) { //Исключения системные
             System.out.println("\nАварийное завершение работы! Брошено исключение: " + e.getMessage());
+            System.exit(1);
+
         }
     }
 }
