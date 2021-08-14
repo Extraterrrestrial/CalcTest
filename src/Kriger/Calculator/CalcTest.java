@@ -1,15 +1,13 @@
 package Kriger.Calculator;
 
-import java.util.*;
+import java.util.Scanner;
 
 class CalcTest {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         System.out.println("Введите, что нужно посчитать в виде 5 + 5 или V + V\nВводить нужно числа от 1 до 10\nДля завершения работы калбкулятора введите x:");
-        try { //Обрабатываем исключения
-
+        try {
             while (true) {
                 System.out.print(">");
                 String input_str = sc.nextLine();
@@ -26,9 +24,9 @@ class CalcTest {
                 String str2 = input_line[2];
 
                 if (Checks.exist_arabic(str1) && Checks.exist_arabic(str2) && operate.length() == 1) {
-                    System.out.println("Ответ= " + Calculate.calculate(Integer.parseInt(str1), Integer.parseInt(str2), operate.charAt(0)));
+                    System.out.println(Calculate.calculate(Integer.parseInt(str1), Integer.parseInt(str2), operate.charAt(0)));
                 } else if (Checks.exist_rome(str1) && Checks.exist_rome(str2) && operate.length() == 1) {
-                    System.out.println("Ответ= " + Convert.arabic_to_rome(Calculate.calculate(Convert.rome_to_arabic(str1), Convert.rome_to_arabic(str2), operate.charAt(0))));
+                    System.out.println(Convert.arabic_to_rome(Calculate.calculate(Convert.rome_to_arabic(str1), Convert.rome_to_arabic(str2), operate.charAt(0))));
                 } else {
                     throw new CalcException("Неверный ввод");
                 }
@@ -39,7 +37,6 @@ class CalcTest {
         } catch (Exception e) { //Исключения системные
             System.out.println("\nАварийное завершение работы! Брошено исключение: " + e.getMessage());
             System.exit(1);
-
         }
     }
 }
